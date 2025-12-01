@@ -1,0 +1,12 @@
+Package: irisToolsHollarJ
+Title: Tools for Working With the Iris Dataset
+Version: 0.0.0.9000
+Authors@R: person("Jadyn", "Hollar", email="jhollar@usf.edu", role=c("aut", "cre"))
+Description: Simple functions to clean, summarize, plot, and find outliers in the iris dataset. Includes defensive programming and a debugging example.
+Depends: R (>= 3.6.0)
+Imports: ggplot2, dplyr, tibble
+License: CC0
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/HollarJ/irisToolsHollarJ
+BugReports: https://github.com/HollarJ/irisToolsHollarJ/issues

@@ -1,0 +1,10 @@
+export(prepare_iris)
+export(summarize_iris)
+export(print.iris_summary)
+export(plot_iris_scatter)
+export(tukey.outlier)
+export(tukey_multiple_safe)
+
+import(ggplot2)
+import(dplyr)
+import(tibble)
