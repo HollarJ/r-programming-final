@@ -1,0 +1,71 @@
+---
+title: "irisToolsHollarJ"
+author: "Jadyn Hollar"
+date: "2025-12-01"
+output: html_document
+---
+
+Introduction
+
+This R Markdown is for my R package irisToolsHollarJ. The intent of this document is to document how my functions operate on the standard iris data set. This should be a fairly straightforward read with some inline code to exemplify how my functions work.
+
+This document will feature:
+
+- loading of my package
+- preparing of iris data
+- summary of iris data
+- scatterplot
+- Tukey outlier function
+
+Load the Package
+
+To start, I load my package in addition to ggplot2 for plotting.
+
+```{r}
+library(devtools)
+devtools::load_all(".") 
+library(ggplot2)
+```
+
+
+Prepare the Package
+
+For this I will be using my prepare_iris function that cleans and prepares the iris data. It also checks that it has all the required data  and that species is a factor. 
+```{r}
+clean_iris <- prepare_iris()
+head(clean_iris)
+```
+
+
+Summary
+
+This function creates a summary table for the datas by species of the sepal length using the iris_summary function. 
+```{r}
+summary_obj <- summarize_iris(clean_iris)
+
+summary_obj
+class(summary_obj)
+```
+
+Scatter plot
+
+This function creates a scatter plot that plots the petal width and sepal length while categorizing them on color based on the species. To keep it simple, it uses the minimal theme. 
+```{r}
+plot_iris_scatter(
+data = clean_iris,
+xvar = "Petal.Width",
+yvar = "Sepal.Length"
+)
+```
+
+Tukey outlier
+
+This function fixes bugs and also includes defensive checks by creating a matrix to run the function and determine if there are any significant outliers.
+```{r}
+set.seed(123)
+
+test_matrix <- matrix(rnorm(50), nrow = 10)
+
+test_matrix
+tukey_multiple_safe(test_matrix)
+```
